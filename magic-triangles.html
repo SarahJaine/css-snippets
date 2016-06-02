@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style>
+body {
+  background-color: white
+}
+/*will slice if both are fixed, absolute*/
+#triangle-down {
+  position: fixed;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  margin-left: 10px;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 50px solid white;
+}
+
+#slice-box {
+  position: static;
+  z-index: 0;
+}
+
+#triangle-bottomleft {
+  position: fixed;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  margin-left: 10px;
+  border-bottom: 100px solid transparent;
+  border-right: 100px solid white;
+}
+
+.first-place > div {
+  background-color: green;
+}
+.second-place > div {
+  background-color: blue;
+}
+
+.slice {
+    width: 100px;
+    height: 10px;
+    margin: 10px;
+    animation-name: tadah;
+    animation-duration: .1s;
+    animation-fill-mode: backwards;
+}
+
+#bar_1 {
+  animation-delay: 0s;
+}
+#bar_2 {
+  animation-delay: .1s;
+}
+#bar_3 {
+  animation-delay: .2s;
+}
+#bar_4 {
+  animation-delay: .3s;
+}
+#bar_5 {
+  animation-delay: .4s;
+}
+
+@keyframes  tadah {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+</style>
+</head>
+<body>
+  <div id="triangle-down">
+  </div>
+
+  <div id="slice-box" class="first-place">
+    <div id="triangle-bottomleft" class="first-place">
+    </div>
+    <div id="bar_5" class="slice">
+    </div>
+    <div id="bar_4" class="slice">
+    </div>
+    <div id="bar_3" class="slice">
+    </div>
+    <div id="bar_2" class="slice">
+    </div>
+    <div id="bar_1" class="slice">
+    </div>
+  </div>
+  <div id="triangle-down">
+  </div>
+  <div id="slice-box" class="second-place">
+    <div id="triangle-bottomleft" class="second-place">
+    </div>
+    <div id="bar_5" class="slice">
+    </div>
+    <div id="bar_4" class="slice">
+    </div>
+    <div id="bar_3" class="slice">
+    </div>
+    <div id="bar_2" class="slice">
+    </div>
+    <div id="bar_1" class="slice">
+    </div>
+  </div>
+</body>
+</html>
